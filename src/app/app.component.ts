@@ -12,20 +12,17 @@ export class AppComponent implements OnInit {
   @ViewChild('thirdPopover') thirdPopover:NgbPopover;
   ngOnInit() {
     setTimeout(() => {
-      this.myPopover.open(); // Open the popover after a delay of 1 second
+      this.myPopover.open();
     }, 1000);
   }
 
   openPopover() {
     this.secondPopover.open();
-  }
-  closePopover() {
     this.myPopover.close();
   }
-  openSecondPopover(){
+  openThirdPopover(){
     this.thirdPopover.open()
-  }
-  closeSecondPopover(){
     this.secondPopover.close()
   }
+
 }
