@@ -38,12 +38,13 @@
   <br><br><br><br><br><br><br><br>
   <button>Third popover
   <span *ngIf="showpopover" [ngbPopover]="popContent3" #thirdPopover="ngbPopover" placement="bottom"
-  [autoClose]="false"></span>
+  [autoClose]="false" #p="ngbPopover"></span>
 </button>
 </div>
 
 <ng-template #popContent3>
   <div>
     this is third popover content
+    <button (click)="finish()">Finish</button>
   </div>
 </ng-template>

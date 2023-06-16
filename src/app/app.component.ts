@@ -27,5 +27,7 @@ export class AppComponent implements OnInit {
     this.thirdPopover.open()
     this.secondPopover.close()
   }
-
+  finish(){
+    this.thirdPopover.close()
+  }
 }
