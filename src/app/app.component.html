@@ -1,23 +1,33 @@
 <div>
-  <button [ngbPopover]="popContent" #myPopover="ngbPopover" [autoClose]="false">Open Popover</button>
+  <div ></div>
+  <button>Open Popover
+
+    <!-- added span tag to conditionally render the popover otherwise the button will work as usual -->
+    <span *ngIf="showpopover"
+  [ngbPopover]="popContent" #myPopover="ngbPopover" [autoClose]="false"></span>
+  </button>
 </div>
 
 <ng-template #popContent>
   <div>
+    <div>
     this is first popover
   </div>
   <button (click)="openPopover(); closePopover()">Next</button>
   <button (click)="closePopover()">Close Popover</button>
+  </div>
 </ng-template>
 
 
 <div>
   <br><br><br><br><br><br><br><br>
-  <button [ngbPopover]="poContent2" #secondPopover="ngbPopover" placement="right-bottom"
-  [autoClose]="false">Second popover</button>
+  <button>Second popover
+
+<span *ngIf="showpopover" [ngbPopover]="poContent2" #secondPopover="ngbPopover" placement="right-bottom"
+  [autoClose]="false"></span></button>
 </div>
 <ng-template #poContent2>
-  <div>
+  <div >
     this is second  popover
   </div>
   <button (click)="openThirdPopover()">Next</button>
@@ -26,8 +36,10 @@
 
 <div>
   <br><br><br><br><br><br><br><br>
-  <button [ngbPopover]="popContent3" #thirdPopover="ngbPopover" placement="bottom"
-  [autoClose]="false">Third popover</button>
+  <button>Third popover
+  <span *ngIf="showpopover" [ngbPopover]="popContent3" #thirdPopover="ngbPopover" placement="bottom"
+  [autoClose]="false"></span>
+</button>
 </div>
 
 <ng-template #popContent3>

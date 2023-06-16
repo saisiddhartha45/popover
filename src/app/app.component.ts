@@ -10,10 +10,13 @@ export class AppComponent implements OnInit {
   @ViewChild('myPopover') myPopover: NgbPopover;
   @ViewChild('secondPopover') secondPopover:NgbPopover;
   @ViewChild('thirdPopover') thirdPopover:NgbPopover;
+  showpopover:boolean = false;
   ngOnInit() {
+    this.showpopover = true
     setTimeout(() => {
       this.myPopover.open();
     }, 1000);
+   
   }
 
   openPopover() {
